@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rizesweetrollz-github-io",
   // Bump this occasionally to a recent date — it pins which version
-  // of the Workers runtime behavior this project gets. Today's date
+  // of the Workers runtime behavior  this project gets. Today's date
   // is always a safe value.
   "compatibility_date": "2026-09-23",
   "main": "./worker.js",
