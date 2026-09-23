@@ -101,9 +101,9 @@ function makeOrderRef() {
 // reads the published version rather than trusting the browser.
 // `origin` is this same Pages deployment's own URL, so this works
 // identically on the production domain and on every preview deploy.
-async function loadCatalog(shop, origin) {
-  const file = shop === 'Catering' ? 'catering.json' : 'pickup.json';
-  const res = await fetch(`${origin}/data/${file}`, { headers: { 'Accept': 'application/json' } });
+async function loadCatalog(shop, env) {
+  const file = shop === "Catering" ? "catering.json" : "pickup.json";
+  const res = await env.ASSETS.fetch(`https://internal/data/${file}`);
   if (!res.ok) throw new Error(`Could not load catalog ${file} (HTTP ${res.status})`);
   return res.json();
 }
@@ -162,7 +162,7 @@ async function handleCheckout(context) {
   // ── Re-price everything from the published catalog ───────
   let catalog;
   try {
-    catalog = await loadCatalog(shop, origin);
+    catalog = await loadCatalog(shop, env);
   } catch (err) {
     console.error('Catalog load failed:', err);
     return jsonResponse(500, { error: 'Could not load the menu. Please try again in a moment.' });
