@@ -22,7 +22,7 @@
   },
 
   "vars": {
-    "SQUARE_ENV": "sandbox"
+    "SQUARE_ENV": "production"
   },
   "secrets": {
     "required": ["SQUARE_ACCESS_TOKEN", "SQUARE_LOCATION_ID"]
