@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition Facts — Rize Sweet Rollz</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/rize-sweet-rollz-logo.jpg" alt="Rize Sweet Rollz logo">
+    <span class="nav-logo-text">Rize Sweet Rollz</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop-pickup.html">Pickup Shop</a></li>
+    <li><a href="shop-catering.html">Catering</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="nutrition.html" class="active">Nutrition</a></li>
+  </ul>
+  <a class="nav-order-btn" href="#" data-doordash-link target="_blank" rel="noopener">Order on DoorDash</a>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop-pickup.html">Pickup Shop</a>
+    <a href="shop-catering.html">Catering</a>
+    <a href="about.html">About Us</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="#" data-doordash-link target="_blank" rel="noopener">Order on DoorDash</a>
+  </div>
+</nav>
+
+<div class="nutrition-page">
+  <div class="nutrition-header">
+    <p class="section-eyebrow">Transparency matters</p>
+    <h1>Nutrition Facts</h1>
+    <p>Here's what goes into every roll — extra love included, but not listed.</p>
+  </div>
+
+  <div class="nutrition-panels">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--maroon-dark);text-align:center;margin-bottom:14px;">Cinnamon Rolls</h3>
+      <div class="nf-panel">
+        <div class="nf-title-bar"><div class="nf-title">Nutrition Facts</div></div>
+        <div class="nf-servings"><div>12 servings per package</div><div style="display:flex;justify-content:space-between;"><span><strong>Serving size</strong></span><span><strong>½ roll (68g)</strong></span></div></div>
+        <div class="nf-cal-wrap"><div class="nf-cal-label">Amount per serving</div><div class="nf-cal-row"><span class="nf-cal-text">Calories</span><span class="nf-cal-num">200</span></div></div>
+        <div class="nf-dv-header">% Daily Value*</div>
+        <div class="nf-rows">
+          <div class="nf-row"><span class="nf-bold">Total Fat 7g</span><span class="nf-dv">9%</span></div>
+          <div class="nf-row"><span class="ind1">Saturated Fat 4g</span><span class="nf-dv">20%</span></div>
+          <div class="nf-row"><span class="ind1"><em>Trans</em> Fat 0g</span><span></span></div>
+          <div class="nf-row b2"><span class="nf-bold">Cholesterol 35mg</span><span class="nf-dv">12%</span></div>
+          <div class="nf-row"><span class="nf-bold">Sodium 260mg</span><span class="nf-dv">11%</span></div>
+          <div class="nf-row b2"><span class="nf-bold">Total Carbohydrate 31g</span><span class="nf-dv">11%</span></div>
+          <div class="nf-row"><span class="ind1">Dietary Fiber 0g</span><span class="nf-dv">0%</span></div>
+          <div class="nf-row"><span class="ind1">Total Sugars 11g</span><span></span></div>
+          <div class="nf-row"><span class="ind2">Includes 10g Added Sugars</span><span class="nf-dv">20%</span></div>
+          <div class="nf-row b2"><span class="nf-bold">Protein 5g</span><span></span></div>
+        </div>
+        <div class="nf-micro">
+          <div class="nf-row b4"><span>Vitamin D 0.3mcg</span><span class="nf-dv">2%</span></div>
+          <div class="nf-row"><span>Calcium 30mg</span><span class="nf-dv">2%</span></div>
+          <div class="nf-row"><span>Iron 0.5mg</span><span class="nf-dv">2%</span></div>
+          <div class="nf-row"><span>Potassium 40mg</span><span class="nf-dv">0%</span></div>
+        </div>
+        <div class="nf-footer">*The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutritional advice.</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--maroon-dark);text-align:center;margin-bottom:14px;">Cream Cheese Frosting</h3>
+      <div class="nf-panel">
+        <div class="nf-title-bar"><div class="nf-title">Nutrition Facts</div></div>
+        <div class="nf-servings"><div>12 servings per package</div><div style="display:flex;justify-content:space-between;"><span><strong>Serving size</strong></span><span><strong>1 tbsp (12g)</strong></span></div></div>
+        <div class="nf-cal-wrap"><div class="nf-cal-label">Amount per serving</div><div class="nf-cal-row"><span class="nf-cal-text">Calories</span><span class="nf-cal-num">50</span></div></div>
+        <div class="nf-dv-header">% Daily Value*</div>
+        <div class="nf-rows">
+          <div class="nf-row"><span class="nf-bold">Total Fat 3.5g</span><span class="nf-dv">4%</span></div>
+          <div class="nf-row"><span class="ind1">Saturated Fat 2g</span><span class="nf-dv">10%</span></div>
+          <div class="nf-row"><span class="ind1"><em>Trans</em> Fat 0g</span><span></span></div>
+          <div class="nf-row b2"><span class="nf-bold">Cholesterol 10mg</span><span class="nf-dv">3%</span></div>
+          <div class="nf-row"><span class="nf-bold">Sodium 20mg</span><span class="nf-dv">1%</span></div>
+          <div class="nf-row b2"><span class="nf-bold">Total Carbohydrate 5g</span><span class="nf-dv">2%</span></div>
+          <div class="nf-row"><span class="ind1">Dietary Fiber 0g</span><span class="nf-dv">0%</span></div>
+          <div class="nf-row"><span class="ind1">Total Sugars 5g</span><span></span></div>
+          <div class="nf-row"><span class="ind2">Includes 5g Added Sugars</span><span class="nf-dv">10%</span></div>
+          <div class="nf-row b2"><span class="nf-bold">Protein 0g</span><span></span></div>
+        </div>
+        <div class="nf-micro">
+          <div class="nf-row b4"><span>Vitamin D 0mcg</span><span class="nf-dv">0%</span></div>
+          <div class="nf-row"><span>Calcium 0mg</span><span class="nf-dv">0%</span></div>
+          <div class="nf-row"><span>Iron 0mg</span><span class="nf-dv">0%</span></div>
+          <div class="nf-row"><span>Potassium 0mg</span><span class="nf-dv">0%</span></div>
+        </div>
+        <div class="nf-footer">*The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily diet. 2,000 calories a day is used for general nutritional advice.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ing-section">
+    <h2>Ingredients</h2>
+    <div class="ing-panels">
+      <div class="ing-card">
+        <div class="ing-card-title">Cinnamon Rolls</div>
+        <div class="ing-card-sub">Handcrafted · No cornstarch</div>
+        <ul class="ing-list">
+          <li>Bread Flour <span class="sub">(wheat)</span></li>
+          <li>Whole Milk <span class="sub">(milk, vitamin D3)</span></li>
+          <li>Butter <span class="sub">(pasteurized cream, natural flavorings)</span></li>
+          <li>Brown Sugar <span class="sub">(sugar, invert sugar, cane molasses)</span></li>
+          <li>Eggs</li><li>Sugar</li>
+          <li>Instant Yeast <span class="sub">(yeast, sorbitan monostearate)</span></li>
+          <li>Salt</li><li>Cinnamon</li>
+          <li>White Distilled Vinegar <span class="sub">(white distilled vinegar, water)</span></li>
+        </ul>
+        <div class="ing-allergen"><strong>CONTAINS: MILK, EGG, WHEAT</strong></div>
+      </div>
+      <div class="ing-card">
+        <div class="ing-card-title">Cream Cheese Frosting</div>
+        <div class="ing-card-sub">Included with every order</div>
+        <ul class="ing-list">
+          <li>Powdered Sugar <span class="sub">(sugar, corn starch)</span></li>
+          <li>Cream Cheese <span class="sub">(pasteurized milk and cream, salt, carob bean gum, cheese culture)</span></li>
+          <li>Butter <span class="sub">(pasteurized cream)</span></li>
+          <li>Natural Flavorings</li>
+          <li>Vanilla Extract <span class="sub">(extractives of Madagascar Bourbon vanilla beans in water, alcohol)</span></li>
+        </ul>
+        <div class="ing-allergen"><strong>CONTAINS: MILK</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Rize Sweet Rollz — All rights reserved</footer>
+
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
