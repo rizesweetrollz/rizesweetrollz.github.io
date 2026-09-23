@@ -2,7 +2,7 @@
 
 Two files control everything customers can buy:
 
-- `public/data/pickup.json` → the **Pickup Shop**
+- `public/data/pickup.json` → the **Pickup  Shop**
 - `public/data/catering.json` → the **Catering** page
 
 That's it. You never need to touch the HTML, the CSS, or any
