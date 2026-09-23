@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickup Shop — Rize Sweet Rollz</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-shop="Pickup" data-catalog="data/pickup.json">
+
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/rize-sweet-rollz-logo.jpg" alt="Rize Sweet Rollz logo">
+    <span class="nav-logo-text">Rize Sweet Rollz</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop-pickup.html" class="active">Pickup Shop</a></li>
+    <li><a href="shop-catering.html">Catering</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="nutrition.html">Nutrition</a></li>
+  </ul>
+  <a class="nav-order-btn" href="#" data-doordash-link target="_blank" rel="noopener">Order on DoorDash</a>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop-pickup.html">Pickup Shop</a>
+    <a href="shop-catering.html">Catering</a>
+    <a href="about.html">About Us</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="#" data-doordash-link target="_blank" rel="noopener">Order on DoorDash</a>
+  </div>
+</nav>
+
+<div class="shop-hero">
+  <h1>Pickup Shop</h1>
+  <p>Fresh-baked rolls, ready for local pickup. Order online and we'll confirm your pickup time.</p>
+  <div class="shop-tabs">
+    <a class="shop-tab active" href="shop-pickup.html">Pickup</a>
+    <a class="shop-tab" href="shop-catering.html">Catering</a>
+  </div>
+</div>
+
+<section class="order-section" id="order-anchor">
+  <div class="section-header">
+    <p class="section-eyebrow">Local Pick up at our Bakery in Salt Lake City only </p>
+    <h2>Place Your Order</h2>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+
+  <div class="pickup-form-box" id="pickupFormBox">
+    <div class="pickup-form-title">Your Pickup Information</div>
+    <p class="pickup-form-sub">We'll use this to confirm your order and arrange pickup. Local pickup only — no shipping.</p>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Full Name *</label><input type="text" id="f-name" class="form-input" placeholder="Jane Smith"></div>
+      <div class="form-group"><label class="form-label">Phone Number *</label><input type="tel" id="f-phone" class="form-input" placeholder="(801) 555-0123"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Email Address *</label><input type="email" id="f-email" class="form-input" placeholder="jane@email.com"></div>
+      <div class="form-group"><label class="form-label">Preferred Pickup Time *</label><input type="datetime-local" id="f-pickup" class="form-input" required><span class="form-hint" id="leadTimeHint"></span></div>
+    </div>
+    <div class="form-group" style="margin-top:4px;"><label class="form-label">Order Notes (optional)</label><textarea id="f-notes" class="form-input" rows="2" placeholder="Any questions or special requests?"></textarea></div>
+  </div>
+
+  <div class="cart-box">
+    <div class="cart-title">Your Cart</div>
+    <div id="cartBody"><div class="cart-empty">Your cart is empty — add some rolls above!</div></div>
+    <div id="cartFooter" style="display:none;">
+      <div id="cartSubtotal" class="cart-subtotal-row"></div>
+      <div id="cartTax" class="cart-tax-row"></div>
+      <div class="cart-total" id="cartTotal"></div>
+      <div class="checkout-error" id="checkoutError"></div>
+      <button class="checkout-btn" onclick="goToCheckout()">Continue to Payment →</button>
+      <p class="pickup-note">Tax is calculated at checkout · You'll pay securely on Square · We'll confirm your time by phone</p>
+    </div>
+  </div>
+
+</section>
+
+<footer>© 2026 Rize Sweet Rollz — All rights reserved</footer>
+
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
