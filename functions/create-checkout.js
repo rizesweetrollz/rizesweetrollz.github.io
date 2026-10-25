@@ -303,7 +303,7 @@ async function handleCheckout(context) {
         redirect_url: `${origin}/order-confirmed.html?ref=${encodeURIComponent(orderRef)}`
       },
       pre_populated_data: {
-        buyer_phone_number: customer.phone
+        buyer_phone_number: phone
       },
       payment_note: note
     };
