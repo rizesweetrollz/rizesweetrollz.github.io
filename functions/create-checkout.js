@@ -76,6 +76,15 @@ function toCents(dollars) {
   return Math.round(Number(dollars) * 100);
 }
 
+// Square requires E.164 format: + and the country code, then digits.
+// The shop only serves US customers, so a 10-digit number gets +1.
+function toE164(raw) {
+  const digits = String(raw || '').replace(/\D/g, '');
+  if (digits.length === 10) return `+1${digits}`;
+  if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
+  return null;
+}
+
 function jsonResponse(status, body) {
   return new Response(JSON.stringify(body), {
     status,
@@ -147,6 +156,12 @@ async function handleCheckout(context) {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(customer.email)) {
     return jsonResponse(400, { error: 'That email address doesn\'t look right.' });
   }
+  
+  const phone = toE164(customer.phone);
+  if (!phone) {
+    return jsonResponse(400, { error: 'Please enter a 10-digit phone number.' });
+  }
+  
   if (!Array.isArray(items) || items.length === 0) {
     return jsonResponse(400, { error: 'Your cart is empty.' });
   }
