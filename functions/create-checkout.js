@@ -261,7 +261,7 @@ async function handleCheckout(context) {
       recipient: {
         display_name: customer.name,
         email_address: customer.email,
-        phone_number: customer.phone
+        phone_number: phone
       },
       schedule_type: 'SCHEDULED',
       pickup_at: pickupAt.toISOString(),
@@ -283,7 +283,7 @@ async function handleCheckout(context) {
     metadata: {
       order_ref: orderRef,
       shop: String(shop || ''),
-      customer_phone: String(customer.phone).slice(0, 100),
+      customer_phone: phone,
       pickup_at: pickupAt.toISOString()
     }
   };
