@@ -288,14 +288,13 @@ async function handleCheckout(context) {
         redirect_url: `${origin}/order-confirmed.html?ref=${encodeURIComponent(orderRef)}`
       },
       pre_populated_data: {
-        buyer_email: customer.email,
         buyer_phone_number: customer.phone
       },
       payment_note: note
     };
   }
 
-  async function callSquare(body) {
+ async function callSquare(body) {
     const res = await fetch(`${squareBase(env)}/v2/online-checkout/payment-links`, {
       method: 'POST',
       headers: {
@@ -305,9 +304,13 @@ async function handleCheckout(context) {
       },
       body: JSON.stringify(body)
     });
-    return { ok: res.ok, data: await res.json().catch(() => ({})) };
+    const text = await res.text();
+    let data = {};
+    try { data = JSON.parse(text); } catch { /* not JSON */ }
+    if (!res.ok) console.error('Square HTTP', res.status, text.slice(0, 1000));
+    return { ok: res.ok, data };
   }
-
+  
   try {
     // Attempt 1: with the pickup fulfillment attached.
     let result = await callSquare(buildBody(true));
