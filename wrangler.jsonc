@@ -24,6 +24,13 @@
   "vars": {
     "SQUARE_ENV": "production"
   },
+  // Settings for preview builds of non-main branches (like test-site).
+  // Previews talk to Square's sandbox, so testing never charges a real card.
+  "previews": {
+    "vars": {
+      "SQUARE_ENV": "sandbox"
+    }
+  },
   "secrets": {
     "required": ["SQUARE_ACCESS_TOKEN", "SQUARE_LOCATION_ID"]
   }
