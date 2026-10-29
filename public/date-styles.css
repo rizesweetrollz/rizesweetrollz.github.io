@@ -1,0 +1,207 @@
+/*
+    Styles for date.php (events on a selected day and the request form).
+    Loads after styles.css, so it can use the site's color variables.
+*/
+
+/* Page heading for the selected date (direct child of body only,
+   so the navigation bar's site name is not affected) */
+body.date-page > h1 {
+    font-family: 'Bree', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--maroon-dark);
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 24px 16px 8px;
+}
+
+body.date-page > h2 {
+    font-family: 'Bree', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--maroon);
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 32px 0 16px;
+}
+
+body.date-page p.no-events {
+    text-align: center;
+    color: var(--text-body);
+    font-size: 1.1rem;
+    padding: 16px;
+}
+
+/* Event cards: a responsive grid instead of 25% inline blocks */
+.events-list {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));*/
+    
+    gap: 16px;
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.event-container {
+    background: var(--white);
+    border: 2px solid var(--cream-mid);
+    border-left: 6px solid var(--maroon);
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 4px rgba(74, 17, 24, 0.08);
+    color: var(--text-body);
+    font-family: 'Bebas', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.event-container img {
+    flex: 0 0 40%;
+    border-radius: 8px;
+}
+
+
+.event-title {
+    font-family: 'Bree', serif;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: var(--maroon-dark);
+    margin-bottom: 8px;
+}
+
+.event-container > div:not(.event-title) {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+/* Request form */
+.request-container {
+    background: var(--white);
+    border: 2px solid var(--cream-mid);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto 48px;
+    box-shadow: 0 4px 6px -1px rgba(74, 17, 24, 0.12);
+    font-family: 'Bebas', sans-serif;
+    color: var(--text-body);
+}
+
+.request-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.request-container label {
+    font-size: 1rem;
+    color: var(--maroon-dark);
+    margin-top: 10px;
+}
+
+.request-container input[type="text"],
+.request-container input[type="email"],
+.request-container input[type="tel"],
+.request-container input[type="date"],
+.request-container input[type="time"],
+.request-container textarea {
+    font-family: 'Bebas', sans-serif;
+    font-size: 1rem;
+    padding: 8px 10px;
+    border: 1px solid var(--cream-mid);
+    border-radius: 6px;
+    background: var(--cream);
+    color: var(--text-body);
+    width: 100%;
+}
+
+.request-container input:focus,
+.request-container textarea:focus {
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 3px rgba(153, 48, 60, 0.15);
+}
+
+.request-container textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+/* Date and time row: keep the fields and their Clear buttons on one line */
+#date_time_area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+#date_time_area label {
+    width: 100%;
+    margin-top: 6px;
+}
+
+#date_time_area input {
+    flex: 1 1 160px;
+}
+
+/* Buttons: the Clear buttons and the submit button */
+.request-container button {
+    font-family: 'Bebas', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.request-container button[type="button"] {
+    padding: 6px 12px;
+    background: var(--cream-dark);
+    color: var(--maroon);
+    border: 1px solid var(--cream-mid);
+}
+
+.request-container button[type="button"]:hover {
+    background: var(--cream-mid);
+}
+
+.request-container button[type="submit"] {
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: var(--maroon);
+    color: var(--cream);
+    border: none;
+    align-self: flex-start;
+}
+
+.request-container button[type="submit"]:hover {
+    background: var(--maroon-dark);
+}
+
+/* Responsive: stack the form and tighten spacing on phones */
+@media (max-width: 600px) {
+    body.date-page > h1 {
+        font-size: 2.2rem;
+    }
+
+    .request-container {
+        padding: 16px;
+    }
+
+    .request-container button[type="submit"] {
+        align-self: stretch;
+    }
+}
+
+.event-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.event-title a:hover {
+    text-decoration: underline;
+}

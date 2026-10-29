@@ -18,7 +18,7 @@
 // order — so everything lands in your Square dashboard by itself.
 // ─────────────────────────────────────────────────────────────
 
-const SQUARE_VERSION = '2026-09-16';
+export const SQUARE_VERSION = '2026-09-16';
 
 // The bakery's timezone. The pickup time a customer picks is always
 // wall-clock time AT THE SHOP — if someone orders from New York and
@@ -64,7 +64,7 @@ function parsePickupTime(value) {
 
 // Square has two completely separate worlds: sandbox (fake money,
 // for testing) and production (real money). SQUARE_ENV picks one.
-function squareBase(env) {
+export function squareBase(env) {
   return env.SQUARE_ENV === 'production'
     ? 'https://connect.squareup.com'
     : 'https://connect.squareupsandbox.com';
@@ -72,20 +72,20 @@ function squareBase(env) {
 
 // Money in the Square API is always an integer of the smallest
 // currency unit. $12.50 is 1250, never 12.5 — floats would round wrong.
-function toCents(dollars) {
+export function toCents(dollars) {
   return Math.round(Number(dollars) * 100);
 }
 
 // Square requires E.164 format: + and the country code, then digits.
 // The shop only serves US customers, so a 10-digit number gets +1.
-function toE164(raw) {
+export function toE164(raw) {
   const digits = String(raw || '').replace(/\D/g, '');
   if (digits.length === 10) return `+1${digits}`;
   if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
   return null;
 }
 
-function jsonResponse(status, body) {
+export function jsonResponse(status, body) {
   return new Response(JSON.stringify(body), {
     status,
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }
@@ -94,7 +94,7 @@ function jsonResponse(status, body) {
 
 // A short human-friendly code. Square's own order ID is long and
 // ugly; this is what you and the customer say out loud on the phone.
-function makeOrderRef() {
+export function makeOrderRef() {
   const d = new Date();
   const stamp = String(d.getFullYear()).slice(2)
     + String(d.getMonth() + 1).padStart(2, '0')

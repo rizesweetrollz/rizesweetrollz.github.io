@@ -1,0 +1,15 @@
+{
+  "shop": "Subscription",
+  "products": [
+    {
+      "id": "monthly",
+      "name": "Monthly Subscription",
+      "desc": "Describe what subscribers get each month.",
+      "price": 0.0,
+      "priceSub": "per month",
+      "img": "images/six-rolls-in-glass-baking-dish.jpg",
+      "alt": "Monthly rolls subscription",
+      "squarePlanVariationId": "REPLACE_WITH_SQUARE_PLAN_VARIATION_ID"
+    }
+  ]
+}
