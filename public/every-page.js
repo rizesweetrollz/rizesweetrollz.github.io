@@ -21,7 +21,7 @@ const NAV_LINKS = [
     { file: 'index.html',        label: 'Home' },
     { file: 'shop-pickup.html',  label: 'Pickup Shop' },
     { file: 'shop-catering.html', label: 'Catering' },
-//    { file: 'subscription.html', label: 'Subscriptions' },
+    { file: 'subscription.html', label: 'Subscriptions' },
     { file: 'about.html',        label: 'About Us' },
     { file: 'nutrition.html',    label: 'Nutrition' },
     // Calendar: uncomment this line when the calendar is ready to go live.
