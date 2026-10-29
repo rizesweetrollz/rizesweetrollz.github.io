@@ -195,6 +195,8 @@ nav{background:var(--maroon-dark);display:flex;justify-content:space-between;ali
 .ing-allergen{font-size:11px;color:rgba(255,255,255,0.55);margin-top:8px;}
 .ing-allergen strong{color:rgba(255,255,255,0.9);}
 footer{background:var(--maroon-deeper);color:rgba(255,255,255,0.5);text-align:center;padding:24px;font-size:15px;}
+.footer-version{font-size:12px;opacity:0.6;margin-top:6px;letter-spacing:0.5px;}
+.test-banner{background:#ffd23f;color:#1a1a1a;text-align:center;padding:8px 16px;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 @media(max-width:768px){
   nav{padding:0 16px;position:relative;}
   .nav-links,.nav-order-btn{display:none;}
