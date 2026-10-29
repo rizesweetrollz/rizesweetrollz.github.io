@@ -56,7 +56,6 @@ async function subscribe(planId, btn) {
     name: document.getElementById('f-name').value.trim(),
     phone: document.getElementById('f-phone').value.trim(),
     email: document.getElementById('f-email').value.trim(),
-    fulfillment: document.getElementById('f-fulfillment').value,
     notes: document.getElementById('f-notes').value.trim()
   };
   if (!customer.name || !customer.phone || !customer.email) {

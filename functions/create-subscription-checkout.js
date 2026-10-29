@@ -50,9 +50,6 @@ async function handleSubscription(context) {
   if (!phone) {
     return jsonResponse(400, { error: 'Please enter a 10-digit phone number.' });
   }
-  // Pickup or delivery. Delivery has Square's checkout page collect
-  // the customer's address.
-  const fulfillment = customer.fulfillment === 'delivery' ? 'delivery' : 'pickup';
 
   // ── Look up the plan in the published catalog ────────────
   let catalog;
@@ -69,9 +66,13 @@ async function handleSubscription(context) {
   if (!plan) {
     return jsonResponse(400, { error: 'That plan is no longer available.' });
   }
-  // Guards against the placeholder plan in subscription.json going live
-  // before it's been linked to a real Square plan.
-  const variationId = plan.squarePlanVariationId;
+  // The sandbox is a separate Square account with its own plan IDs, so
+  // preview builds (SQUARE_ENV=sandbox) use the plan's sandbox copy.
+  // Also guards against a placeholder ID going live before it's been
+  // linked to a real Square plan.
+  const variationId = env.SQUARE_ENV === 'production'
+    ? plan.squarePlanVariationId
+    : plan.squarePlanVariationIdSandbox;
   if (!variationId || variationId.startsWith('REPLACE_') || !(Number(plan.price) > 0)) {
     console.error(`Plan "${plan.id}" is missing a Square plan variation ID or price`);
     return jsonResponse(500, { error: 'This plan isn\'t open for sign-ups yet. Please call us.' });
@@ -92,7 +93,8 @@ async function handleSubscription(context) {
     checkout_options: {
       subscription_plan_id: variationId,
       allow_tipping: false,
-      ask_for_shipping_address: fulfillment === 'delivery',
+      // Subscriptions are delivered (free), so Square collects the address.
+      ask_for_shipping_address: true,
       redirect_url: `${origin}/order-confirmed.html?ref=${encodeURIComponent(ref)}`
     },
     pre_populated_data: {
@@ -101,7 +103,7 @@ async function handleSubscription(context) {
     },
     payment_note: [
       ref,
-      `${plan.name} subscription — ${fulfillment}`,
+      `${plan.name} subscription — delivery`,
       `${customer.name} / ${customer.phone}`,
       customer.notes ? `Notes: ${customer.notes}` : ''
     ].filter(Boolean).join(' | ').slice(0, 500)
