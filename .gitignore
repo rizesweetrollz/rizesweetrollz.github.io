@@ -1,0 +1,12 @@
+# Files Git should never upload to GitHub.
+
+# NetBeans settings that only apply to this computer
+nbproject/private/
+
+# Local preview settings for Claude
+.claude/
+
+# Wrangler (Cloudflare's local tool) working files and local secrets
+.wrangler/
+node_modules/
+.dev.vars

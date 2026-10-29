@@ -1,0 +1,62 @@
+window.DB_EVENTS = {
+    "2026/10/26": [
+	{
+	    "id": "1284577154",
+	    "address": "123 Fake St., Faketown, USA",
+	    "event_type": "catering",
+	    "title": "Bookstore",
+	    "start_date": "10/26/2026",
+	    "start_time": "1:30 pm",
+	    "end_date": "10/26/2026",
+	    "end_time": "4:00 pm",
+	    "info": "We will be catering for the local Bookstore!",
+	    "image": "stock_photo.jpeg"
+	}
+    ],
+    "2026/10/28": [
+	{
+	    "id": "2884736987",
+	    "address": "123 Fake St., Faketown, USA",
+	    "event_type": "speaking",
+	    "title": "Town Hall",
+	    "start_date": "10/28/2026",
+	    "start_time": "4:00 pm",
+	    "end_date": "10/28/2026",
+	    "end_time": "8:00 pm",
+	    "info": ""
+	},
+	{
+	    "id": "2994873098",
+	    "address": "123 Fake St., Faketown, USA",
+	    "event_type": "speaking",
+	    "title": "Church",
+	    "start_date": "10/28/2026",
+	    "start_time": "2:00 pm",
+	    "end_date": "10/28/2026",
+	    "end_time": "3:00 pm",
+	    "info": ""
+	},
+	{
+	    "id": "2544816201",
+	    "address": "123 Fake St., Faketown, USA",
+	    "event_type": "speaking",
+	    "title": "Park",
+	    "start_date": "10/28/2026",
+	    "start_time": "12:00 pm",
+	    "end_date": "10/28/2026",
+	    "end_time": "1:00 pm",
+	    "info": ""
+	},
+	{
+	    "id": "3321854970",
+	    "address": "123 Fake St., Faketown, USA",
+	    "event_type": "popup",
+	    "title": "Store",
+	    "start_date": "10/28/2026",
+	    "start_time": "11:00 am",
+	    "end_date": "10/28/2026",
+	    "end_time": "6:00 pm",
+	    "info": ""
+	}
+    ]
+};

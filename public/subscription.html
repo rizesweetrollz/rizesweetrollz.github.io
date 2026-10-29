@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Subscriptions — Rize Sweet Rollz</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+    	<script src="every-page.js"></script>
+    </head>
+    <body data-shop="Subscription" data-catalog="data/subscription.json">
+
+	<nav id="title-bar"></nav>
+
+	<div class="shop-hero">
+	    <h1>Subscriptions</h1>
+	    <p>Fresh rolls on a regular schedule. Sign up once and we'll take care of the rest.</p>
+	    <div class="shop-tabs">
+		<a class="shop-tab" href="shop-pickup.html">Pickup</a>
+		<a class="shop-tab" href="shop-catering.html">Catering</a>
+		<a class="shop-tab active" href="subscription.html">Subscription</a>
+	    </div>
+	</div>
+
+	<section class="order-section" id="order-anchor">
+	    <div class="section-header">
+		<p class="section-eyebrow">Free delivery · Cancel anytime</p>
+		<h2>Choose Your Plan</h2>
+	    </div>
+
+	    <div class="products-grid" id="productsGrid"></div>
+
+	    <!-- Hidden until a plan is chosen. js/subscription.js shows it,
+	         fills in the chosen plan, and scrolls to it. -->
+	    <div class="pickup-form-box" id="subscribeFormBox" style="display:none;">
+		<div class="pickup-form-title">Your Information</div>
+		<p class="plan-summary" id="planSummary"></p>
+		<p class="pickup-form-sub">We'll use this to set up your subscription. You'll pay securely on Square, where you'll also enter your delivery address.</p>
+		<div class="form-row">
+		    <div class="form-group"><label class="form-label" for="f-name">Full Name *</label><input type="text" id="f-name" class="form-input" placeholder="Jane Smith" autocomplete="name"></div>
+		    <div class="form-group"><label class="form-label" for="f-phone">Phone Number *</label><input type="tel" id="f-phone" class="form-input" placeholder="(801) 555-0123" autocomplete="tel"></div>
+		</div>
+		<div class="form-row">
+		    <div class="form-group"><label class="form-label" for="f-email">Email Address *</label><input type="email" id="f-email" class="form-input" placeholder="jane@email.com" autocomplete="email"></div>
+		    <div class="form-group"><label class="form-label" for="f-notes">Notes (optional)</label><input type="text" id="f-notes" class="form-input" placeholder="Anything we should know?"></div>
+		</div>
+		<div class="checkout-error" id="subscribeError" style="display:none;"></div>
+		<button class="checkout-btn" id="subscribeBtn">Continue to Secure Checkout</button>
+	    </div>
+
+	    <p class="pickup-note">Free delivery · Tax is calculated at checkout · You'll pay securely on Square</p>
+	</section>
+
+	<footer>© 2026 Rize Sweet Rollz — All rights reserved</footer>
+
+	<script src="js/config.js"></script>
+	<script src="js/subscription.js"></script>
+    </body>
+</html>

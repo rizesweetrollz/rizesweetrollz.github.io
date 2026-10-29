@@ -1,0 +1,16 @@
+{
+  "shop": "Subscription",
+  "products": [
+    {
+      "id": "classic-monthly",
+      "name": "Classic Cinnamon Sweet Rollz - Monthly",
+      "desc": "A 12-pack of our classic cinnamon rolls, delivered free every month.",
+      "price": 48.0,
+      "priceSub": "per month · free delivery",
+      "img": "images/six-rolls-in-glass-baking-dish.jpg",
+      "alt": "A dozen classic cinnamon rolls",
+      "squarePlanVariationId": "E6DGG2HCJFVG5TKU4ZUYNHBK",
+      "squarePlanVariationIdSandbox": "WR3I73223JWR62WCBWNFMKH3"
+    }
+  ]
+}
