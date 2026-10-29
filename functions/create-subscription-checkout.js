@@ -109,7 +109,7 @@ async function handleSubscription(context) {
     ].filter(Boolean).join(' | ').slice(0, 500)
   };
 
-  try {
+  async function callSquare(body) {
     const res = await fetch(`${squareBase(env)}/v2/online-checkout/payment-links`, {
       method: 'POST',
       headers: {
@@ -122,15 +122,30 @@ async function handleSubscription(context) {
     const text = await res.text();
     let data = {};
     try { data = JSON.parse(text); } catch { /* not JSON */ }
+    if (!res.ok) console.error('Square HTTP', res.status, text.slice(0, 1000));
+    return { ok: res.ok, data };
+  }
 
-    if (!res.ok) {
-      console.error('Square HTTP', res.status, text.slice(0, 1000));
+  try {
+    let result = await callSquare(body);
+
+    // Square rejects some email addresses it considers invalid (for
+    // example anything @example.com). Rather than failing the sign-up,
+    // retry without pre-filling it; the customer enters it on Square's page.
+    if (!result.ok) {
+      delete body.pre_populated_data.buyer_email;
+      body.idempotency_key = `${ref}-sub-noemail`;
+      result = await callSquare(body);
+      if (result.ok) console.warn('Succeeded on retry without buyer_email.');
+    }
+
+    if (!result.ok) {
       return jsonResponse(502, {
         error: 'We couldn\'t reach our payment provider. Please try again, or call us.'
       });
     }
 
-    const link = data.payment_link;
+    const link = result.data.payment_link;
     return jsonResponse(200, { url: link.long_url || link.url, ref });
   } catch (err) {
     console.error('Unexpected subscription checkout failure:', err);
